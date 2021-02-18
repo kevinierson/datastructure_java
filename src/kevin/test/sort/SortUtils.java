@@ -1,5 +1,7 @@
 package kevin.test.sort;
 
+import java.util.Arrays;
+
 /**
  * @author: kevin
  * @date: 10:44 2021/2/16
@@ -19,6 +21,7 @@ public class SortUtils {
         }
         return arr;
     }
+
     //希尔排序
     public static int[] shellSort(int[] arr){
         int len = arr.length;
@@ -35,6 +38,7 @@ public class SortUtils {
         }
         return arr;
     }
+
     //冒泡排序
     public static int[] bubbleSort(int[] arr){
         int tmp;
@@ -74,5 +78,56 @@ public class SortUtils {
         }
         arr[low] = tmp;
         return low;
+    }
+
+    //简单选择排序
+    public static void selectionSort(int[] arr){
+        for(int i = 0; i < arr.length - 1; i++){
+            int minIndex = i;
+            for(int j = i + 1; j < arr.length ; j++){
+                if(arr[minIndex] > arr[j]){
+                    minIndex = j;
+                }
+            }
+            int tmp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = tmp;
+        }
+    }
+
+    //堆排序
+    public static void heapSort(int arr[], int len){
+        buildHeap(arr, len);
+        for(int i = len - 1; i > 0; i--){
+            swap(arr, 0, i);
+            heapify(arr, 0, i);
+        }
+    }
+
+    private static void buildHeap(int[] arr, int len) {
+        for(int i = len / 2 - 1; i >= 0; i--){
+            heapify(arr, i, len);
+        }
+    }
+
+    private static void heapify(int[] arr, int i, int len) {
+        int parent = i;
+        int child = 2 * i + 1;
+        while(child < len){
+            if(child + 1 < len && arr[child] < arr[child + 1]){
+                child++;
+            }
+            if(arr[parent] < arr[child]){
+                swap(arr, parent, child);
+                parent = child;
+            }
+            child = child * 2 + 1;
+        }
+    }
+
+    private static void swap(int[] arr, int parent, int child) {
+        int tmp = arr[parent];
+        arr[parent] = arr[child];
+        arr[child] = tmp;
     }
 }
