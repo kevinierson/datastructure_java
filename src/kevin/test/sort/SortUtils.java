@@ -21,7 +21,26 @@ public class SortUtils {
         }
         return arr;
     }
-
+    //折半插入排序
+    public static int[] binaryInsertionSort(int[] arr) {
+        for(int i = 1; i < arr.length; ++i){
+            int insertValue = arr[i];
+            int low = 0;
+            int high = i - 1;
+            while(low <= high){
+                int mid = (low + high) / 2;
+                if(insertValue < arr[mid])
+                    high = mid - 1;
+                else
+                    low =mid + 1;
+            }
+            for(int j = i - 1; j >= high + 1; --j){
+                arr[j + 1] = arr[j];
+            }
+            arr[high + 1] = insertValue;
+        }
+        return arr;
+    }
     //希尔排序
     public static int[] shellSort(int[] arr){
         int len = arr.length;

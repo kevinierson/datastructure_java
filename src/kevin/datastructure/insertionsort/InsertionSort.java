@@ -6,6 +6,7 @@ import java.util.Arrays;
  * @author: kevin
  * @date: 10:33 2021/2/14
  */
+@SuppressWarnings("all")
 public class InsertionSort {
 
     private static int[] insertionSort(int[] arr){

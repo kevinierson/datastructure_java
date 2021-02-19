@@ -17,13 +17,14 @@ public class SortTest {
     //插入排序测试
     @Test
     public void insertSortTest(){
-        int arr[] = new int[100000];
+        int arr[] = new int[200000];
         for(int i = 0; i < arr.length; i++){
             arr[i] = random.nextInt(10000);
         }
         long startTime = System.currentTimeMillis();
-//        SortUtils.insertionSort(arr);//直接插入排序
-        SortUtils.shellSort(arr);//希尔排序
+        SortUtils.insertionSort(arr);//直接插入排序
+//        SortUtils.binaryInsertionSort(arr); //折半插入排序
+//        SortUtils.shellSort(arr);//希尔排序
         long endTime = System.currentTimeMillis();
         System.out.println("耗时：" + (endTime - startTime ));
     }
