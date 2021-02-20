@@ -1,4 +1,4 @@
-package kevin.datastructure.selectionsort;
+package kevin.datastructure.sort.selectionsort;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package kevin.datastructure.insertionsort;
+package kevin.datastructure.sort.insertionsort;
 
 import java.util.Arrays;
 

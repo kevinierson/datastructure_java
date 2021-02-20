@@ -1,4 +1,4 @@
-package kevin.datastructure.exchangesort;
+package kevin.datastructure.sort.exchangesort;
 
 import java.util.Arrays;
 

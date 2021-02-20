@@ -1,4 +1,4 @@
-package kevin.datastructure.mergesort;
+package kevin.datastructure.sort.mergesort;
 
 import java.util.Arrays;
 
